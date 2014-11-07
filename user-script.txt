@@ -1,0 +1,8 @@
+Start on homepage
+Click on active tournament
+go to team 1 page
+go to player page
+go to your profile
+	
+
+Need: Index, profile page, tournament page, team page, player page.
