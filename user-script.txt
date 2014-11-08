@@ -1,3 +1,37 @@
+Hi, (Insert Users Name), My name is (Insert Name), and I will walk you through our session today. As you use this site we ask that you try and think out loud…what you are seeing, what you are trying to do, and what you are thinking.
+ 
+If you have any questions as we go along, just ask them. However, I might not be able to answer them because we are interested in seeing how users react when assistance isn’t available. 
+ 
+The main focus of our project is to design a system that enhances the ESports viewing experience by giving the user a convenient place for information. Are you familiar with ESports and the tournaments that surround them? 
+*If user is unfamiliar with ESports give a brief description.
+ 
+Do you have any questions so far?
+ 
+Before we start, I’d like to ask a few quick questions:
+What is your computer/internet user experience? (ie. power user, average, novice, what is a mouse???)
+Have you ever watched an ESports tournament? 
+	(If user has watched ESports) How often do you follow ESports tournaments?
+	(Otherwise) Is there a reason you haven't watched an ESports tournament?
+ 
+Alright, so let’s start by finding out more information about one of the teams in the tournament. 
+*Hopefully user travels from homepage->active tournament->team 1 page.
+ 
+How about commenting on one of the team’s last matches?
+*User should travel back to active tournament and see comment box.
+ 
+Can you navigate to a previous tournament?
+*If we don’t add anything just explain that will be a feature implemented later but we wanted to make sure the index page was useful.
+ 
+Can you tell me who won when team 3 played team 1 in the current tournament?
+ 
+Do you have any questions or thoughts you want to share with us? 
+ 
+Thank you for taking time to look at our prototype and give us feedback. 
+
+
+
+Old Script….
+
 Start on homepage
 Click on active tournament
 go to team 1 page
