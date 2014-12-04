@@ -1,7 +1,4 @@
-import sqlite3
-from flask import Flask, render_template
-
-app = Flask(__name__)
+from app import app
 
 @app.route('/')
 @app.route('/index')
@@ -16,6 +13,3 @@ def event():
 def team():
     return 'Evil Geniuses!!'
 
-
-if __name__ == '__main__':
-    app.run()
