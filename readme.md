@@ -1,23 +1,23 @@
 ESports Tournament Viewer
 ========
-
-A better experience for enjoying Esports! Yeahh!!!!
+A better experience for enjoying Esports... Woot!
 
 Contributors
 --------
 * Byron Samaripa
-* Forrest Williams
 * John Richards
+* Forrest Williams
 
 Requirements
 -------
 * Python 2.7.x
 * Pip
-* Flask
 
 Installation
 --------
-* TBD
+```
+python setup.py
+```
 
 Resources
 --------
