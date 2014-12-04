@@ -18,7 +18,7 @@ Installation
 --------
 ```python
 virtualenv flask
-pip install -r requirements.txt
+flask/bin/pip install -r requirements.txt
 chmod a+x run.py
 ```
 
