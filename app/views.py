@@ -35,9 +35,20 @@ def login():
             (form.openid.data, str(form.remember_me.data)))
         return redirect('/index')
     return render_template('login.html',
-                            title='Sign In',
+                            title='Login',
                             form=form,
                             providers=app.config['OPENID_PROVIDERS'])
+@app.route('/about.html')
+@app.route('/about')
+def about():
+    return render_template("about.html",
+                            title="About")
+
+@app.route('/help.html')
+@app.route('/help')
+def help():
+    return render_template("help.html",
+                            title="Help")
 
 @app.route('/user')
 def user():
