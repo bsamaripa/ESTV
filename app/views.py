@@ -11,33 +11,13 @@ auth = HTTPBasicAuth()
 @app.route('/index.html')
 @app.route('/index')
 def index():
-    user = {'nickname': 'Miguel'}  # fake user
-    posts = [  # fake array of posts
-        {
-            'author': {'nickname': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'nickname': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
     return render_template("index.html",
-                            title='Home',
-                            user=user,
-                            posts=posts)
+                            title='Home',)
 @app.route('/login.html')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for OpenID="%s", remember_me=%s' %
-            (form.openid.data, str(form.remember_me.data)))
-        return redirect('/index')
     return render_template('login.html',
-                            title='Login',
-                            form=form,
-                            providers=app.config['OPENID_PROVIDERS'])
+                            title='Login')
 @app.route('/about.html')
 @app.route('/about')
 def about():
@@ -49,6 +29,18 @@ def about():
 def help():
     return render_template("help.html",
                             title="Help")
+
+@app.route('/event-theater.html')
+@app.route('/event-theater')
+def eventYheater():
+    return render_template("event-theater.html",
+                            title="Event")
+
+@app.route('/event-info.html')
+@app.route('/event-info')
+def eventInfo():
+    return render_template("event-info.html",
+                            title="Event")
 
 @app.route('/user')
 def user():

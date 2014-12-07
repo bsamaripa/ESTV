@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<!-- about.html -->
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+
+<div class="container-fluid">
+  <iframe src="http://www.twitch.tv/tsm_theoddone/embed" frameborder="0" scrolling="yes" height="850" width="100%"></iframe>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <script type="text/javascript">
+        $(function() {
+          $('div#doubleElimination .demo').bracket({
+            init: doubleEliminationData})
+          })
+      </script>
+    </div>
+    <div class="col-md-4">
+      <iframe src="http://www.twitch.tv/tsm_theoddone/chat?popout=" frameborder="0" scrolling="yes" height="768" width="100%"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -12,7 +12,33 @@
     <title>ESTV</title>
     {% endif %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.bracket.min.css" />
     <script type="text/javascript" src="/static/js/jquery.bracket.min.js"></script>
+        <script type="text/javascript">
+      $(function() {
+          var demos = ['doubleElimination']
+          $.each(demos, function(i, d){
+            var demo = $('div#'+d)
+            $('<div class="demo"></div>').appendTo(demo)
+          })
+        })
+        var doubleEliminationData = {
+          teams : [
+          ["<a href=team-info.html>Team 1</a>", "Team 2"],
+          ["Team 3", "Team 4"]
+          ],
+          results : [[      /* WINNER BRACKET */
+          [[1,2], [3,4]], /* first and second matches of the first round */
+          [[5,6]]         /* second round */
+          ], [              /* LOSER BRACKET */
+          [[7,8]],        /* first round */
+          [[9,10]]        /* second round */
+          ], [              /* FINALS */
+          [[1,12], [13,14]],
+          [[15,16]]       /* LB winner won first round so need a rematch */
+          ]]
+        }
+      </script>
   </head>
   <body>
      <nav class="navbar navbar-inverse" role="navigation">
@@ -36,18 +62,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          <ul>
-          {% for message in messages %}
-              <li>{{ message }} </li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
       {% block content %}{% endblock %}
-    </div>
   {% block footer %}
   <div class="container">
     <hr>
@@ -65,5 +80,9 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  {% if title == "Login" %}
+    <link href="/static/css/signin.css" rel="stylesheet">
+  {% endif %}
   {% endblock %}
 </html>
