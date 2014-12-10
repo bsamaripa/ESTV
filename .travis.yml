@@ -8,4 +8,10 @@ install:
   - pip install .
   - pip install -r requirements.txt
 # command to run tests
-script: nosetests
+script: python tests.py
+
+deploy:
+  provider: openshift
+  user: "fatsobob@gmail.com"
+  password: "NOPE" # can be encrypted
+  domain: "estv-byronsamaripa.rhcloud.com"

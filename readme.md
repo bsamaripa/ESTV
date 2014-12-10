@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bsamaripa/ESTV.svg?branch=Byron)](https://travis-ci.org/bsamaripa/ESTV)
+
 ESports Tournament Viewer
 ========
 A better experience for enjoying Esports... Woot!
