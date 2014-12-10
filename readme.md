@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.org/bsamaripa/ESTV.svg?branch=Byron)](https://travis-ci.org/bsamaripa/ESTV)
-
 ESports Tournament Viewer
 ========
+[![Build Status](https://travis-ci.org/bsamaripa/ESTV.svg?branch=Byron)](https://travis-ci.org/bsamaripa/ESTV)
+[![Stories in Ready](https://badge.waffle.io/bsamaripa/estv.svg?label=ready&title=Ready)](http://waffle.io/bsamaripa/estv)
+
+
 A better experience for enjoying Esports... Woot!
 
 Contributors
