@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/bsamaripa/estv.png?label=ready&title=Ready)](https://waffle.io/bsamaripa/estv)
 ESports Tournament Viewer
 ========
 A better experience for enjoying Esports... Woot!
