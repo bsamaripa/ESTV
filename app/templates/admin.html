@@ -20,7 +20,11 @@
     </div>
     <div class="col-md-4">
       <h1>Current Events</h1>
-      List all current events with option to delete
+      {{eventList}}
+      {% for event in eventList: %}
+      <li><{{eventList[event]}}/li>
+      {% endfor %}
+
     </div>
     <div class="col-md-4">
       <h1>Delete an Event</h1>

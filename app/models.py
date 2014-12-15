@@ -21,7 +21,7 @@ class Event(db.Model):
     bracket = db.Column(db.String(8000), index=True)
 
     def __repr__(self):
-        return '<Event %r>' % (self.name)
+        return self.name
 
 
 class Game(db.Model):
@@ -30,6 +30,8 @@ class Game(db.Model):
     shortname = db.Column(db.String(120), index=True, unique=True)
     icon = db.Column(db.LargeBinary)
 
+    def __repr__(self):
+        return self.name
 
 class Team(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,11 +39,14 @@ class Team(db.Model):
     #game = db.relationship('Game', backref='team', lazy='dynamic')
     #players = db.relationship('Player', backref='team', lazy='dynamic')
 
+    def __repr__(self):
+        return self.name
 
 class Player(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), index=True, unique=True)
     #team = db.relationship('Team', backref='player', lazy='dynamic')
 
-
+    def __repr__(self):
+        return self.name
 

@@ -1,7 +1,7 @@
 from app import db, models
-from flask import jsonify
-u = models.Event(name='Dreamhack Winter 2014', stub='csgo-dhw-2014', game='CSGO', stream='http://www.twitch.tv/faceittv', teams='', twURL='https://twitter.com/RoomOnFireCSGO', twID='544281945996140544', bracket='Coming Soon')
-print jsonify(u)
-db.session.add(u)
+e1 = models.Event(name='Dreamhack Winter 2014', stub='csgo-dhw-2014', game='CSGO', stream='http://www.twitch.tv/faceittv', teams='', twURL='https://twitter.com/RoomOnFireCSGO', twID='544281945996140544', bracket='Coming Soon')
+e2 = models.Event(name='MLG Aspen 2014', stub='csgo-MLG-2014', game='CSGO', stream='http://www.twitch.tv/faceittv', teams='', twURL='https://twitter.com/RoomOnFireCSGO', twID='544281945996140544', bracket='Coming Soon')
+db.session.add(e1)
+db.session.add(e2)
 db.session.commit()
 events = models.Event.query.all()

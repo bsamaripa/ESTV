@@ -47,6 +47,7 @@ def eventInfo(EventStub):
 @app.route('/admin.html')
 @app.route('/admin', methods=['GET', 'POST', 'DELETE'])
 def admin():
+    events = models.Event.query.all()
     newEvent = CreateEvent()
     newTeam = CreateTeam()
     newPlayer = CreatePlayer()
@@ -56,7 +57,8 @@ def admin():
                             newEvent=newEvent,
                             newTeam=newTeam,
                             newPlayer=newPlayer,
-                            newGame=newGame)
+                            newGame=newGame,
+                            eventList=events)
 
 @app.route('/user.html')
 @app.route('/user')
