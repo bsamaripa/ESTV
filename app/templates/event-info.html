@@ -1,12 +1,10 @@
-<!-- about.html -->
+<!-- event-info.html -->
 {% extends "base.html" %}
-
 {% block content %}
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-          <iframe src="http://www.twitch.tv/tsm_theoddone/embed" frameborder="0" scrolling="yes" height="768" width="100%"></iframe>
+          <iframe src="{{ event.stream }}/embed" frameborder="0" scrolling="yes" height="768" width="100%"></iframe>
         </div>
         <div class="col-md-4">
           <ul class="nav nav-tabs">
@@ -17,7 +15,7 @@
           </ul>
           <div class="tab-content">
             <div id="chat" class="tab-pane fade in active">
-              <iframe src="http://www.twitch.tv/tsm_theoddone/chat?popout=" frameborder="0" scrolling="yes" height="768" width="100%"></iframe>
+              <iframe src="{{ event.stream }}/chat?popout=" frameborder="0" scrolling="yes" height="768" width="100%"></iframe>
             </div>
             <div id="bracket" class="tab-pane fade">
               <div id="doubleElimination">
@@ -43,8 +41,12 @@
                         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                       </div>
                       <div class="col-md-4">
-                        <h2>Bio</h2>
-                        <p>West philidelpha born and raised...</p>
+                        <h2>Players</h2>
+                        <li>Player 1</li>
+                        <li>Player 2</li>
+                        <li>Player 3</li>
+                        <li>Player 4</li>
+                        <li>Player 5</li>
                       </div>
                       <div class="col-md-4">
                         <h2>History</h2>
@@ -63,8 +65,12 @@
                         <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
                       </div>
                       <div class="col-md-4">
-                        <h2>Bio</h2>
-                        <p>On the playground was where I spent most of my days...</p>
+                        <h2>Players</h2>
+                        <li>Player 1</li>
+                        <li>Player 2</li>
+                        <li>Player 3</li>
+                        <li>Player 4</li>
+                        <li>Player 5</li>
                       </div>
                       <div class="col-md-4">
                         <h2>History</h2>
@@ -77,12 +83,20 @@
                 </div>
                 </div>
             <div id="twitter" class="tab-pane fade">
-                          <a class="twitter-timeline"  href="https://twitter.com/ESTV" data-widget-id="534416536522330112">Tweets by @ESTV</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+                          <a class="twitter-timeline"  href="{{event.twURL}}" data-widget-id="{{event.twID}}"></a>
             </div>
           </div>
         </div>
       </div>
     </div>
+<script type="text/javascript">
+  window.twttr = (function (d, s, id) {
+  var t, js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id; js.src= "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>
+    {{ event.teams }}
 {% endblock %}

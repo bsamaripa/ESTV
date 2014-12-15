@@ -1,11 +1,11 @@
-from app import app
+from app import app, db, models
 from flask import render_template, flash, redirect, request, jsonify
-from .forms import LoginForm
-from flask.ext.restful import Api, Resource, reqparse, fields, marshal
-from flask.ext.httpauth import HTTPBasicAuth
+from .forms import CreateEvent, CreatePlayer, CreateTeam, CreateGame
+# from flask.ext.restful import Api, Resource, reqparse, fields, marshal
+# from flask.ext.httpauth import HTTPBasicAuth
 
-api = Api(app)
-auth = HTTPBasicAuth()
+# api = Api(app)
+# auth = HTTPBasicAuth()
 
 @app.route('/')
 @app.route('/index.html')
@@ -18,6 +18,7 @@ def index():
 def login():
     return render_template('login.html',
                             title='Login')
+
 @app.route('/about.html')
 @app.route('/about')
 def about():
@@ -32,19 +33,42 @@ def help():
 
 @app.route('/event-theater.html')
 @app.route('/event-theater')
-def eventYheater():
+def eventTheater():
     return render_template("event-theater.html",
                             title="Event")
 
-@app.route('/event-info.html')
-@app.route('/event-info')
-def eventInfo():
+@app.route('/event/<string:EventStub>')
+def eventInfo(EventStub):
+    event = models.Event.query.filter_by(stub=EventStub).first()
     return render_template("event-info.html",
-                            title="Event")
+                            title = event.name,
+                            event = event)
 
+@app.route('/admin.html')
+@app.route('/admin', methods=['GET', 'POST', 'DELETE'])
+def admin():
+    newEvent = CreateEvent()
+    newTeam = CreateTeam()
+    newPlayer = CreatePlayer()
+    newGame = CreateGame()
+    return render_template("admin.html",
+                            title="Admin",
+                            newEvent=newEvent,
+                            newTeam=newTeam,
+                            newPlayer=newPlayer,
+                            newGame=newGame)
+
+@app.route('/user.html')
 @app.route('/user')
 def user():
-    return 'Users coming soon!'
+    return render_template("user.html",
+                            title="User")
+
+@app.route('/team.html')
+@app.route('/team')
+def team():
+    return render_template("team.html",
+                            title="Team")
 
 @app.errorhandler(404)
 def not_found_error(error):
@@ -56,40 +80,40 @@ def internal_error(error):
 
 
 #  RESTful API
-@auth.error_handler
-def unauthorized():
-    return make_response(jsonify( { 'message': 'Unauthorized access' } ), 403)
-    # return 403 instead of 401 to prevent browsers from displaying the default auth dialog
-class eventAPI(Resource):
-    def get(self):
-        pass
+# @auth.error_handler
+# def unauthorized():
+#     return make_response(jsonify( { 'message': 'Unauthorized access' } ), 403)
+#     # return 403 instead of 401 to prevent browsers from displaying the default auth dialog
+# class eventAPI(Resource):
+#     def get(self):
+#         pass
 
-    def post(self):
-        pass
+#     def post(self):
+#         pass
 
-    def delete(self):
-        pass
+#     def delete(self):
+#         pass
 
-class teamAPI(Resource):
-    def get(self):
-        pass
+# class teamAPI(Resource):
+#     def get(self):
+#         pass
 
-    def post(self):
-        pass
+#     def post(self):
+#         pass
 
-    def delete(self):
-        pass
+#     def delete(self):
+#         pass
 
-class gameAPI(Resource):
-    def get(self):
-        pass
+# class gameAPI(Resource):
+#     def get(self):
+#         pass
 
-    def post(self):
-        pass
+#     def post(self):
+#         pass
 
-    def delete(self):
-        pass
+#     def delete(self):
+#         pass
 
-api.add_resource(eventAPI, '/api/v1/event')
-api.add_resource(teamAPI, '/api/v1/team')
-api.add_resource(gameAPI, '/api/v1/game')
+# api.add_resource(eventAPI, '/api/v1/event')
+# api.add_resource(teamAPI, '/api/v1/team')
+ #api.add_resource(gameAPI, '/api/v1/game')

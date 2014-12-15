@@ -1,7 +1,48 @@
-<!-- help.html -->
+<!-- admin.html -->
 {% extends "base.html" %}
 
 {% block content %}
 <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Create an Event</h1>
+      <form role="form">
+        <form class="form-group">
+          {{ newEvent.name() }}
+        </form>
+        <form class="form-group">
+          {{ newEvent.game() }}
+        </form>
+        <form class="form-group">
+          {{ newEvent.teams() }}
+        </form>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h1>Current Events</h1>
+      List all current events with option to delete
+    </div>
+    <div class="col-md-4">
+      <h1>Delete an Event</h1>
+        Form to delete event
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Add new Team</h1>
+        Form to add team
+    </div>
+    <div class="col-md-4">
+      <h1>Add player</h1>
+        Form to add player
+    </div>
+    <div class="col-md-4">
+      <h1>Add new Game</h1>
+        Form to add game
+    </div>
+  </div>
 </div>
 {% endblock %}
